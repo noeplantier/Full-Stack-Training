@@ -7,11 +7,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class MainController extends AbstractController {
 
-
     #[Route('/', name: 'app_homepage')]
     public function homepage()
     {
-        return $this->render('homepage.html.twig');
+        $starshipCount = 666;
+
+        return $this->render('homepage.html.twig', [
+            'numberOfStartships' => $starshipCount,
+        ]);
+
     }   
 
-};
+}
